@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Развивающий центр: занятия</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Развивающие занятия для детей</h1>
+
+  <div class="controls">
+    <label for="search-input">Поиск:</label>
+    <input type="text" id="search-input" placeholder="Например: английский, логоритмика...">
+    <label for="sort-select">Сортировка:</label>
+    <select id="sort-select">
+      <option value="name-asc">По названию (А-Я)</option>
+      <option value="name-desc">По названию (Я-А)</option>
+      <option value="price-asc">По цене (дешёвые → дорогие)</option>
+      <option value="price-desc">По цене (дорогие → дешёвые)</option>
+      <option value="age-asc">Для малышей → старшие</option>
+    </select>
+  </div>
+
+  <div class="catalog-grid" id="catalog-list">
+    <!-- Занятие 1 -->
+    <article class="card" 
+             data-name="Подготовка к школе" 
+             data-price="500" 
+             data-age-min="5" 
+             data-age-max="7"
+             data-duration="60">
+      <div class="card-header">Подготовка к школе</div>
+      <div class="card-body">
+        <span class="card-age">5–7 лет</span>
+        <h3 class="card-title">Подготовка к школе</h3>
+        <p class="card-desc">Комплексная программа: развитие речи, математика, логика, письмо и адаптация к школьной среде. Занятия в игровой форме.</p>
+        <div class="card-footer">
+          <span class="price">500 ₽ / занятие</span>
+          <span class="duration">60 мин</span>
+        </div>
+        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 2 -->
+    <article class="card" 
+             data-name="Английский для малышей" 
+             data-price="450" 
+             data-age-min="3" 
+             data-age-max="5"
+             data-duration="45">
+      <div class="card-header">Английский для малышей</div>
+      <div class="card-body">
+        <span class="card-age">3–5 лет</span>
+        <h3 class="card-title">Английский для малышей</h3>
+        <p class="card-desc">Изучение английского через игры, песни и сказки. Развиваем слух, память и коммуникативные навыки.</p>
+        <div class="card-footer">
+          <span class="price">450 ₽ / занятие</span>
+          <span class="duration">45 мин</span>
+        </div>
+        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 3 -->
+    <article class="card" 
+             data-name="Творческая мастерская" 
+             data-price="400" 
+             data-age-min="4" 
+             data-age-max="8"
+             data-duration="50">
+      <div class="card-header">Творческая мастерская</div>
+      <div class="card-body">
+        <span class="card-age">4–8 лет</span>
+        <h3 class="card-title">Творческая мастерская</h3>
+        <p class="card-desc">Рисование, лепка, аппликация и поделки из природных материалов. Развиваем мелкую моторику и воображение.</p>
+        <div class="card-footer">
+          <span class="price">400 ₽ / занятие</span>
+          <span class="duration">50 мин</span>
+        </div>
+        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 4 -->
+    <article class="card" 
+             data-name="Логоритмика" 
+             data-price="550" 
+             data-age-min="3" 
+             data-age-max="6"
+             data-duration="45">
+      <div class="card-header">Логоритмика</div>
+      <div class="card-body">
+        <span class="card-age">3–6 лет</span>
+        <h3 class="card-title">Логоритмика</h3>
+        <p class="card-desc">Сочетание движения, музыки и речи. Коррекция звукопроизношения, развитие чувства ритма и координации.</p>
+        <div class="card-footer">
+          <span class="price">550 ₽ / занятие</span>
+          <span class="duration">45 мин</span>
+        </div>
+        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 5 -->
+    <article class="card" 
+             data-name="Детский фитнес" 
+             data-price="420" 
+             data-age-min="4" 
+             data-age-max="9"
+             data-duration="50">
+      <div class="card-header">Детский фитнес</div>
+      <div class="card-body">
+        <span class="card-age">4–9 лет</span>
+        <h3 class="card-title">Детский фитнес</h3>
+        <p class="card-desc">Подвижные игры, упражнения на координацию, растяжка и укрепление мышц. Весёлые тренировки для здоровья!</p>
+        <div class="card-footer">
+          <span class="price">420 ₽ / занятие</span>
+          <span class="duration">50 мин</span>
+        </div>
+        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 6 -->
+    <article class="card" 
+             data-name="Ментальная арифметика" 
+             data-price="600" 
+             data-age-min="5" 
+             data-age-max="12"
+             data-duration="60">
+      <div class="card-header">Ментальная арифметика</div>
+      <div class="card-body">
+        <span class="card-age">5–12 лет</span>
+        <h3 class="card-title">Ментальная арифметика</h3>
+        <p class="card-desc">Развитие интеллекта, скорости мышления и памяти через счёт на абакусе. Формируем уверенность в математике.</p>
+        <div class="card-footer">
+          <span class="price">600 ₽ / занятие</span>
+          <span class="duration">60 мин</span>
+        </div>
+        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
