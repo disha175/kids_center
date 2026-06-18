@@ -58,7 +58,7 @@
           <span class="price">450 ₽ / занятие</span>
           <span class="duration">45 мин</span>
         </div>
-        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+        <a href="class-detai-2.html" class="btn-details">Подробнее →</a>
       </div>
     </article>
 
@@ -78,7 +78,7 @@
           <span class="price">400 ₽ / занятие</span>
           <span class="duration">50 мин</span>
         </div>
-        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+        <a href="class-detai-3.html" class="btn-details">Подробнее →</a>
       </div>
     </article>
 
@@ -98,7 +98,7 @@
           <span class="price">550 ₽ / занятие</span>
           <span class="duration">45 мин</span>
         </div>
-        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+        <a href="class-detai-4.html" class="btn-details">Подробнее →</a>
       </div>
     </article>
 
@@ -118,7 +118,7 @@
           <span class="price">420 ₽ / занятие</span>
           <span class="duration">50 мин</span>
         </div>
-        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+        <a href="class-detai-5.html" class="btn-details">Подробнее →</a>
       </div>
     </article>
 
@@ -138,9 +138,123 @@
           <span class="price">600 ₽ / занятие</span>
           <span class="duration">60 мин</span>
         </div>
-        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+        <a href="class-detai-6.html" class="btn-details">Подробнее →</a>
       </div>
     </article>
   </div>
+
+  <!-- Блок пагинации -->
+  <div class="pagination-container" id="pagination-container">
+    <button class="pagination-btn" id="prev-btn" onclick="changePage(-1)" disabled>← Назад</button>
+    <span class="page-info" id="page-info">Страница 1 из 2</span>
+    <button class="pagination-btn" id="next-btn" onclick="changePage(1)">Вперёд →</button>
+  </div>
+
+  <script>
+    // НАСТРОЙКИ: сколько карточек показывать на одной странице
+    const ITEMS_PER_PAGE = 3; 
+
+    const catalogList = document.getElementById('catalog-list');
+    const searchInput = document.getElementById('search-input');
+    const sortSelect = document.getElementById('sort-select');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const pageInfo = document.getElementById('page-info');
+    
+    let currentPage = 0;
+    let allCards = [];          
+    let filteredCards = [];     
+
+    // Инициализация при загрузке
+    document.addEventListener('DOMContentLoaded', () => {
+      allCards = Array.from(catalogList.querySelectorAll('.card'));
+      filteredCards = [...allCards]; // Изначально показываем всё
+      renderPage();
+    });
+
+    // --- ФУНКЦИОНАЛЬНОСТЬ ПОИСКА ---
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      
+      filteredCards = allCards.filter(card => {
+        const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+        const desc = card.querySelector('.card-desc')?.textContent.toLowerCase() || '';
+        
+        if (!query) return true;
+        
+        return title.includes(query) || desc.includes(query);
+      });
+      
+      currentPage = 0;
+      renderPage();
+    });
+
+    // --- ФУНКЦИОНАЛЬНОСТЬ СОРТИРОВКИ ---
+    sortSelect.addEventListener('change', (e) => {
+      const value = e.target.value;
+      
+      filteredCards.sort((a, b) => {
+        const aName = a.dataset.name.toLowerCase();
+        const bName = b.dataset.name.toLowerCase();
+        const aPrice = Number(a.dataset.price);
+        const bPrice = Number(b.dataset.price);
+        const aAgeMin = Number(a.dataset.ageMin);
+        const bAgeMin = Number(b.dataset.ageMin);
+
+        if (value === 'name-asc') {
+          return aName.localeCompare(bName);
+        } else if (value === 'name-desc') {
+          return bName.localeCompare(aName);
+        } else if (value === 'price-asc') {
+          return aPrice - bPrice;
+        } else if (value === 'price-desc') {
+          return bPrice - aPrice;
+        } else if (value === 'age-asc') {
+          return aAgeMin - bAgeMin;
+        }
+        // По умолчанию (или если значение не совпало) — порядок не меняем
+        return 0;
+      });
+
+      currentPage = 0;
+      renderPage();
+    });
+
+    function renderPage() {
+      catalogList.innerHTML = ''; // Очищаем сетку
+
+      const start = currentPage * ITEMS_PER_PAGE;
+      const end = start + ITEMS_PER_PAGE;
+      const totalPages = Math.ceil(filteredCards.length / ITEMS_PER_PAGE);
+
+      // Добавляем только нужные карточки из отфильтрованного и отсортированного списка
+      for (let i = start; i < end && i < filteredCards.length; i++) {
+        catalogList.appendChild(filteredCards[i]);
+      }
+
+      // Обновляем текст и кнопки
+      pageInfo.textContent = `Страница ${currentPage + 1} из ${totalPages || 1}`;
+      prevBtn.disabled = currentPage === 0;
+      nextBtn.disabled = end >= filteredCards.length || filteredCards.length === 0;
+      
+      if (filteredCards.length === 0) {
+        catalogList.innerHTML = '<p style="text-align:center; color:#777;">Ничего не найдено. Попробуйте другой запрос.</p>';
+      }
+    }
+
+    function changePage(direction) {
+      const totalPages = Math.ceil(filteredCards.length / ITEMS_PER_PAGE);
+      currentPage += direction;
+
+      if (currentPage < 0) currentPage = 0;
+      if (currentPage >= totalPages) currentPage = totalPages - 1;
+
+      renderPage();
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
+
+

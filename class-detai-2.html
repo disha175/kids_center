@@ -2,45 +2,58 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Занятие: Подготовка к школе</title>
+  <title>Занятие: Английский для малышей</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="index.html" class="back-link" style="display:inline-block; margin-bottom:20px; text-decoration:none; color:var(--primary); font-weight:bold;">← Назад в каталог</a>
-  <h1>Подготовка к школе</h1>
+  <a href="index.html" class="back-link">← Назад в каталог</a>
+  <h1>Английский для малышей</h1>
 
   //Галерея миниатюр
   <div class="gallery">
-    <img src="https://i.pinimg.com/736x/5f/66/01/5f6601ded4e2fab5d76d0fd924414bfb.jpg" 
-         alt="Занятие подготовка к школе 1" 
+    <img src="https://i.pinimg.com/736x/2b/1d/73/2b1d73306c0f10ae97922e00de7001b3.jpg" 
+         alt="Английский для малышей 1" 
          class="gallery-thumb"
          onclick="document.getElementById('main-img').src=this.src">
     
-    <img src="https://i.pinimg.com/1200x/c1/a3/dc/c1a3dcd1b82d314b068e59d9d390bbcc.jpg" 
-         alt="Занятие подготовка к школе 2" 
+    <img src="https://i.pinimg.com/736x/4a/e2/f7/4ae2f7d8175ebbfb085a9ecf3ca7442e.jpg" 
+         alt="Английсский для малышей 2" 
          class="gallery-thumb"
          onclick="document.getElementById('main-img').src=this.src">
     
-    <img src="https://i.pinimg.com/1200x/96/0c/77/960c77f5c116ed459f683b5c7cf2e81b.jpg" 
-         alt="Занятие подготовка к школе 3" 
+    <img src="https://i.pinimg.com/736x/0b/97/39/0b9739be4f118e5a40d6b243a0bf87f3.jpg" 
+         alt="Английский для малышей 3" 
          class="gallery-thumb"
          onclick="document.getElementById('main-img').src=this.src">
   </div>
 
   //Основное изображение
-  <img id="main-img" src="https://i.pinimg.com/1200x/d5/db/94/d5db9474017164b331c417c58baaa87f.jpg" class="main-image" alt="Основное фото занятия">
+  <img id="main-img" src="https://i.pinimg.com/736x/56/75/15/56751587b356408c3b81739827b09f47.jpg" class="main-image" alt="Основное фото занятия">
 
-  //Характеристики
   <section class="specs">
     <h2>Характеристики</h2>
     <ul>
-      <li><strong>Возраст:</strong> 5-7 лет</li>
-      <li><strong>Длительность:</strong> 60 минут</li>
-      <li><strong>Стоимость:</strong> 500 ₽ / занятие</li>
-      <li><strong>Формат:</strong> групповые занятия (до 8 детей)</li>
-      <li><strong>Педагог:</strong> Елена Сергеевна, стаж 12 лет</li>
+      <li><strong>Возраст:</strong> 3–5 лет</li>
+      <li><strong>Длительность:</strong> 45 минут</li>
+      <li><strong>Стоимость:</strong> 450 ₽ / занятие</li>
+      <li><strong>Формат:</strong> игровые занятия (до 6 детей)</li>
+      <li><strong>Педагог:</strong> Ольга Игоревна, стаж 8 лет</li>
     </ul>
-    <p><strong>Описание:</strong> Комплексная программа подготовки к школе включает развитие речи, математические представления, логику, основы письма и адаптацию к школьной среде. Занятия проходят в игровой форме, что снижает тревожность и формирует позитивное отношение к учёбе.</p>
+    <p><strong>Описание:</strong> Изучение английского через игры, песни и сказки. Развиваем слух, память и коммуникативные навыки в непринуждённой обстановке. Дети учатся простым фразам, названиям цветов, животных и предметов через интерактивные задания.</p>
+  </section>
+
+  <section class="reviews">
+    <h2>Отзывы родителей</h2>
+    <div class="review-item">
+      <div class="review-meta">Марина Соколова</div>
+      <div class="review-date">22.03.2024</div>
+      <p>Дочка напевает песенки на английском, это чудо! Очень мягкий подход, ребёнок не устаёт. Уже узнаёт и называет несколько слов самостоятельно.</p>
+    </div>
+    <div class="review-item">
+      <div class="review-meta">Татьяна Орлова</div>
+      <div class="review-date">15.03.2024</div>
+      <p>Педагог умеет удерживать внимание малышей. Видно, что занятия продуманы до мелочей: много движения, смены активностей, нет скучных заучиваний.</p>
+    </div>
   </section>
 
   //Отзывы
@@ -71,7 +84,7 @@
 <div id="reviews-list" class="reviews-list">
 </div>
   </section>
-  <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
 
   // Уникальный ключ для каждой страницы
@@ -157,5 +170,3 @@ function escapeHtml(text) {
 </script>
 </body>
 </html>
-
-

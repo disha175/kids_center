@@ -2,45 +2,58 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Занятие: Подготовка к школе</title>
+  <title>Занятие: Фитнес для детей</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="index.html" class="back-link" style="display:inline-block; margin-bottom:20px; text-decoration:none; color:var(--primary); font-weight:bold;">← Назад в каталог</a>
-  <h1>Подготовка к школе</h1>
+  <a href="index.html" class="back-link">← Назад в каталог</a>
+  <h1>Детский фитнес</h1>
 
-  //Галерея миниатюр
+   //Галерея миниатюр
   <div class="gallery">
-    <img src="https://i.pinimg.com/736x/5f/66/01/5f6601ded4e2fab5d76d0fd924414bfb.jpg" 
-         alt="Занятие подготовка к школе 1" 
+    <img src="https://i.pinimg.com/736x/61/bd/77/61bd775d6a276345c0841a1759630ab9.jpg" 
+         alt="Детский фитнес 1" 
          class="gallery-thumb"
          onclick="document.getElementById('main-img').src=this.src">
     
-    <img src="https://i.pinimg.com/1200x/c1/a3/dc/c1a3dcd1b82d314b068e59d9d390bbcc.jpg" 
-         alt="Занятие подготовка к школе 2" 
+    <img src="https://i.pinimg.com/736x/a3/e6/73/a3e67376a31549bb881a68ab4a31d72f.jpg" 
+         alt="Детский фитнес 2" 
          class="gallery-thumb"
          onclick="document.getElementById('main-img').src=this.src">
     
-    <img src="https://i.pinimg.com/1200x/96/0c/77/960c77f5c116ed459f683b5c7cf2e81b.jpg" 
-         alt="Занятие подготовка к школе 3" 
+    <img src="https://i.pinimg.com/1200x/05/3a/35/053a35d3ef5ae87ffae1249660277d3a.jpg" 
+         alt="Детский фитнес 3" 
          class="gallery-thumb"
          onclick="document.getElementById('main-img').src=this.src">
   </div>
 
   //Основное изображение
-  <img id="main-img" src="https://i.pinimg.com/1200x/d5/db/94/d5db9474017164b331c417c58baaa87f.jpg" class="main-image" alt="Основное фото занятия">
+  <img id="main-img" src="https://i.pinimg.com/736x/32/f5/02/32f502b0a8a10130eef27cb8bfab76e6.jpg" class="main-image" alt="Основное фото занятия">
 
-  //Характеристики
   <section class="specs">
     <h2>Характеристики</h2>
     <ul>
-      <li><strong>Возраст:</strong> 5-7 лет</li>
-      <li><strong>Длительность:</strong> 60 минут</li>
-      <li><strong>Стоимость:</strong> 500 ₽ / занятие</li>
-      <li><strong>Формат:</strong> групповые занятия (до 8 детей)</li>
-      <li><strong>Педагог:</strong> Елена Сергеевна, стаж 12 лет</li>
+      <li><strong>Возраст:</strong> 4–7 лет</li>
+      <li><strong>Длительность:</strong> 45 минут</li>
+      <li><strong>Стоимость:</strong> 450 ₽ / занятие</li>
+      <li><strong>Формат:</strong> групповые занятия (до 10 детей)</li>
+      <li><strong>Педагог:</strong> Александр Петрович, стаж 7 лет</li>
     </ul>
-    <p><strong>Описание:</strong> Комплексная программа подготовки к школе включает развитие речи, математические представления, логику, основы письма и адаптацию к школьной среде. Занятия проходят в игровой форме, что снижает тревожность и формирует позитивное отношение к учёбе.</p>
+    <p><strong>Описание:</strong> Активные игры, элементы гимнастики и растяжки в игровой форме. Развиваем силу, выносливость, гибкость и координацию движений. Занятия помогают ребёнку выплеснуть энергию и научиться управлять своим телом.</p>
+  </section>
+
+  <section class="reviews">
+    <h2>Отзывы родителей</h2>
+    <div class="review-item">
+      <div class="review-meta">Дмитрий Волков</div>
+      <div class="review-date">24.03.2024</div>
+      <p>Сын стал более ловким и выносливым. Ему нравится, что это не скучная зарядка, а весёлые эстафеты и игры. После занятий всегда в хорошем настроении.</p>
+    </div>
+    <div class="review-item">
+      <div class="review-meta">Наталья Иванова</div>
+      <div class="review-date">14.03.2024</div>
+      <p>Отличный формат для активных детей. Педагог умеет заинтересовать и организовать ребят. Видно, что нагрузка подбирается по возрасту.</p>
+    </div>
   </section>
 
   //Отзывы
@@ -71,7 +84,7 @@
 <div id="reviews-list" class="reviews-list">
 </div>
   </section>
-  <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
 
   // Уникальный ключ для каждой страницы
@@ -157,5 +170,3 @@ function escapeHtml(text) {
 </script>
 </body>
 </html>
-
-
