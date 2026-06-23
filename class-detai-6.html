@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Занятие: Ментальная арифметика</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="index.html" class="back-link">← Назад в каталог</a>
+  <h1>Ментальная арифметика</h1>
+
+  <div class="gallery">
+    <img src="https://i.pinimg.com/1200x/12/22/a6/1222a62e30647393e13c83f198093d86.jpg" 
+         alt="Ментальная арифметика 1" 
+         class="gallery-thumb"
+         onclick="document.getElementById('main-img').src=this.src">
+    
+    <img src="https://i.pinimg.com/736x/25/a5/e2/25a5e2f96259d490826e5117d5745c3a.jpg" 
+         alt="Ментальная арифметика 2" 
+         class="gallery-thumb"
+         onclick="document.getElementById('main-img').src=this.src">
+    
+    <img src="https://i.pinimg.com/736x/f3/7f/b2/f37fb208396230b5905e63db02a406d7.jpg" 
+         alt="Ментальная арифметика 3" 
+         class="gallery-thumb"
+         onclick="document.getElementById('main-img').src=this.src">
+  </div>
+
+  <img id="main-img" src="https://static.tildacdn.com/tild6565-3762-4361-b332-313731326364/DSC_4008_1_1.png" class="main-image" alt="Основное фото занятия">
+
+  <section class="specs">
+    <h2>Характеристики</h2>
+    <ul>
+      <li><strong>Возраст:</strong> 5–10 лет</li>
+      <li><strong>Длительность:</strong> 60 минут</li>
+      <li><strong>Стоимость:</strong> 600 ₽ / занятие</li>
+      <li><strong>Формат:</strong> групповые занятия (до 6 детей)</li>
+      <li><strong>Педагог:</strong> Екатерина Михайловна, стаж 11 лет</li>
+    </ul>
+    <p><strong>Описание:</strong> Обучение быстрому устному счёту с использованием абакуса (счётной доски) и без него. Развиваем математическое мышление, память, внимание и скорость реакции. Методика помогает ребёнку увереннее чувствовать себя на уроках математики в школе.</p>
+  </section>
+
+  <section class="reviews">
+    <h2>Отзывы родителей</h2>
+    <div class="review-item">
+      <div class="review-meta">Сергей Морозов</div>
+      <div class="review-date">23.03.2024</div>
+      <p>Ребёнок стал быстрее считать в уме, улучшилась концентрация внимания. Очень интересная методика, педагог объясняет всё доступно и наглядно.</p>
+    </div>
+    <div class="review-item">
+      <div class="review-meta">Анна Лебедева</div>
+      <div class="review-date">16.03.2024</div>
+      <p>Дочка раньше боялась математики, а теперь с радостью решает примеры. Видно, что занятия дают результат, и ребёнок получает удовольствие от процесса.</p>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>Отзывы родителей</h2>
+    <div class="review-item">
+      <div class="review-meta">Анна Петрова</div>
+      <div class="review-date">25.03.2024</div>
+      <p>Сын стал увереннее отвечать на занятиях, улучшилась речь и внимание. Очень нравится игровой формат — ребёнок бежит на уроки с радостью!</p>
+    </div>
+    <div class="review-item">
+      <div class="review-meta">Игорь Смирнов</div>
+      <div class="review-date">20.03.2024</div>
+      <p>Отличная программа! Видно, что педагог умеет заинтересовать детей. За месяц ребёнок научился считать до 20 и стал лучше запоминать стихи.</p>
+    </div>
+
+<section class="review-form-container">
+  <h3>Оставить отзыв</h3>
+  <form id="new-review-form">
+    <input type="text" id="review-name" placeholder="Ваше имя" required>
+    <textarea id="review-text" rows="3" placeholder="Напишите, что вам понравилось..." required></textarea>
+    <button type="submit" class="btn-submit">Отправить</button>
+  </form>
+</section>
+
+<!-- Контейнер для списка отзывов -->
+<div id="reviews-list" class="reviews-list">
+</div>
+  </section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Уникальный ключ для каждой страницы
+  const pageName = window.location.pathname
+    .split('/')
+    .pop()
+    .replace('.html', '');
+
+  const storageKey = `reviews_${pageName}`;
+
+  function getReviews() {
+    const stored = localStorage.getItem(storageKey);
+    return stored ? JSON.parse(stored) : [];
+  }
+
+  function saveReview(review) {
+    const reviews = getReviews();
+    reviews.push(review);
+    localStorage.setItem(storageKey, JSON.stringify(reviews));
+    renderReviews();
+  }
+
+  function renderReviews() {
+    const reviewsList = document.getElementById('reviews-list');
+
+    if (!reviewsList) return;
+
+    const reviews = getReviews();
+
+    if (reviews.length === 0) {
+      reviewsList.innerHTML =
+        '<p style="color:#888;font-style:italic;">Пока нет отзывов. Будьте первым!</p>';
+      return;
+    }
+
+    reviewsList.innerHTML = reviews.map(review => `
+      <div class="review-item">
+        <div class="review-meta">${escapeHtml(review.name)}</div>
+        <div class="review-date">${review.date}</div>
+        <p>${escapeHtml(review.text)}</p>
+      </div>
+    `).join('');
+  }
+
+  const form = document.getElementById('new-review-form');
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('review-name');
+      const textInput = document.getElementById('review-text');
+
+      const name = nameInput.value.trim();
+      const text = textInput.value.trim();
+
+      if (!name || !text) return;
+
+      const review = {
+        name: name,
+        text: text,
+        date: new Date().toLocaleDateString('ru-RU')
+      };
+
+      saveReview(review);
+
+      nameInput.value = '';
+      textInput.value = '';
+    });
+  }
+
+  renderReviews();
+});
+
+function escapeHtml(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "'");
+}
+</script>
+</body>
+</html>

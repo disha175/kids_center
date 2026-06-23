@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Развивающий центр: занятия</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-logo">Развивающие занятия для детей</div>
+    <nav class="site-nav">
+      <a href="index.html" class="active">Каталог</a>
+      <a href="about.html">О центре</a>
+    </nav>
+  </header>
+
+  <div class="controls">
+    <label for="search-input">Поиск:</label>
+    <input type="text" id="search-input" placeholder="Например: английский, логоритмика...">
+    <label for="sort-select">Сортировка:</label>
+    <select id="sort-select">
+      <option value="name-asc">По названию (А-Я)</option>
+      <option value="name-desc">По названию (Я-А)</option>
+      <option value="price-asc">По цене (дешёвые → дорогие)</option>
+      <option value="price-desc">По цене (дорогие → дешёвые)</option>
+      <option value="age-asc">Для малышей → старшие</option>
+    </select>
+  </div>
+
+  <div class="catalog-grid" id="catalog-list">
+    <!-- Занятие 1 -->
+    <article class="card" 
+             data-name="Подготовка к школе" 
+             data-price="500" 
+             data-age-min="5" 
+             data-age-max="7"
+             data-duration="60">
+      <div class="card-header">Подготовка к школе</div>
+      <div class="card-body">
+        <span class="card-age">5–7 лет</span>
+        <h3 class="card-title">Подготовка к школе</h3>
+        <p class="card-desc">Комплексная программа: развитие речи, математика, логика, письмо и адаптация к школьной среде. Занятия в игровой форме.</p>
+        <div class="card-footer">
+          <span class="price">500 ₽ / занятие</span>
+          <span class="duration">60 мин</span>
+        </div>
+        <a href="class-detai-1.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 2 -->
+    <article class="card" 
+             data-name="Английский для малышей" 
+             data-price="450" 
+             data-age-min="3" 
+             data-age-max="5"
+             data-duration="45">
+      <div class="card-header">Английский для малышей</div>
+      <div class="card-body">
+        <span class="card-age">3–5 лет</span>
+        <h3 class="card-title">Английский для малышей</h3>
+        <p class="card-desc">Изучение английского через игры, песни и сказки. Развиваем слух, память и коммуникативные навыки.</p>
+        <div class="card-footer">
+          <span class="price">450 ₽ / занятие</span>
+          <span class="duration">45 мин</span>
+        </div>
+        <a href="class-detai-2.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 3 -->
+    <article class="card" 
+             data-name="Творческая мастерская" 
+             data-price="400" 
+             data-age-min="4" 
+             data-age-max="8"
+             data-duration="50">
+      <div class="card-header">Творческая мастерская</div>
+      <div class="card-body">
+        <span class="card-age">4–8 лет</span>
+        <h3 class="card-title">Творческая мастерская</h3>
+        <p class="card-desc">Рисование, лепка, аппликация и поделки из природных материалов. Развиваем мелкую моторику и воображение.</p>
+        <div class="card-footer">
+          <span class="price">400 ₽ / занятие</span>
+          <span class="duration">50 мин</span>
+        </div>
+        <a href="class-detai-3.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 4 -->
+    <article class="card" 
+             data-name="Логоритмика" 
+             data-price="550" 
+             data-age-min="3" 
+             data-age-max="6"
+             data-duration="45">
+      <div class="card-header">Логоритмика</div>
+      <div class="card-body">
+        <span class="card-age">3–6 лет</span>
+        <h3 class="card-title">Логоритмика</h3>
+        <p class="card-desc">Сочетание движения, музыки и речи. Коррекция звукопроизношения, развитие чувства ритма и координации.</p>
+        <div class="card-footer">
+          <span class="price">550 ₽ / занятие</span>
+          <span class="duration">45 мин</span>
+        </div>
+        <a href="class-detai-4.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 5 -->
+    <article class="card" 
+             data-name="Детский фитнес" 
+             data-price="420" 
+             data-age-min="4" 
+             data-age-max="9"
+             data-duration="50">
+      <div class="card-header">Детский фитнес</div>
+      <div class="card-body">
+        <span class="card-age">4–9 лет</span>
+        <h3 class="card-title">Детский фитнес</h3>
+        <p class="card-desc">Подвижные игры, упражнения на координацию, растяжка и укрепление мышц. Весёлые тренировки для здоровья!</p>
+        <div class="card-footer">
+          <span class="price">420 ₽ / занятие</span>
+          <span class="duration">50 мин</span>
+        </div>
+        <a href="class-detai-5.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+
+    <!-- Занятие 6 -->
+    <article class="card" 
+             data-name="Ментальная арифметика" 
+             data-price="600" 
+             data-age-min="5" 
+             data-age-max="12"
+             data-duration="60">
+      <div class="card-header">Ментальная арифметика</div>
+      <div class="card-body">
+        <span class="card-age">5–12 лет</span>
+        <h3 class="card-title">Ментальная арифметика</h3>
+        <p class="card-desc">Развитие интеллекта, скорости мышления и памяти через счёт на абакусе. Формируем уверенность в математике.</p>
+        <div class="card-footer">
+          <span class="price">600 ₽ / занятие</span>
+          <span class="duration">60 мин</span>
+        </div>
+        <a href="class-detai-6.html" class="btn-details">Подробнее →</a>
+      </div>
+    </article>
+  </div><br>
+
+  <!-- Блок пагинации -->
+  <div class="pagination-container" id="pagination-container">
+    <button class="pagination-btn" id="prev-btn" onclick="changePage(-1)" disabled>← Назад</button>
+    <span class="page-info" id="page-info">Страница 1 из 2</span>
+    <button class="pagination-btn" id="next-btn" onclick="changePage(1)">Вперёд →</button>
+  </div>
+
+  <script>
+    // --- Сколько карточек показывать на одной странице ---
+    const ITEMS_PER_PAGE = 3; 
+
+    const catalogList = document.getElementById('catalog-list');
+    const searchInput = document.getElementById('search-input');
+    const sortSelect = document.getElementById('sort-select');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const pageInfo = document.getElementById('page-info');
+    
+    let currentPage = 0;
+    let allCards = [];          
+    let filteredCards = [];     
+
+    // --- Инициализация при загрузке --- 
+    document.addEventListener('DOMContentLoaded', () => {
+      allCards = Array.from(catalogList.querySelectorAll('.card'));
+      filteredCards = [...allCards]; 
+      renderPage();
+    });
+
+    // --- Функциональность поиска ---
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      
+      filteredCards = allCards.filter(card => {
+        const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+        const desc = card.querySelector('.card-desc')?.textContent.toLowerCase() || '';
+        
+        if (!query) return true;
+        
+        return title.includes(query) || desc.includes(query);
+      });
+      
+      currentPage = 0;
+      renderPage();
+    });
+
+    // --- Функциональность сортировки ---
+    sortSelect.addEventListener('change', (e) => {
+      const value = e.target.value;
+      
+      filteredCards.sort((a, b) => {
+        const aName = a.dataset.name.toLowerCase();
+        const bName = b.dataset.name.toLowerCase();
+        const aPrice = Number(a.dataset.price);
+        const bPrice = Number(b.dataset.price);
+        const aAgeMin = Number(a.dataset.ageMin);
+        const bAgeMin = Number(b.dataset.ageMin);
+
+        if (value === 'name-asc') {
+          return aName.localeCompare(bName);
+        } else if (value === 'name-desc') {
+          return bName.localeCompare(aName);
+        } else if (value === 'price-asc') {
+          return aPrice - bPrice;
+        } else if (value === 'price-desc') {
+          return bPrice - aPrice;
+        } else if (value === 'age-asc') {
+          return aAgeMin - bAgeMin;
+        }
+        // По умолчанию 
+        return 0;
+      });
+
+      currentPage = 0;
+      renderPage();
+    });
+
+    function renderPage() {
+      catalogList.innerHTML = ''; 
+
+      const start = currentPage * ITEMS_PER_PAGE;
+      const end = start + ITEMS_PER_PAGE;
+      const totalPages = Math.ceil(filteredCards.length / ITEMS_PER_PAGE);
+
+      // Добавляем только нужные карточки из отфильтрованного и отсортированного списка
+      for (let i = start; i < end && i < filteredCards.length; i++) {
+        catalogList.appendChild(filteredCards[i]);
+      }
+
+      // Обновляем текст и кнопки
+      pageInfo.textContent = `Страница ${currentPage + 1} из ${totalPages || 1}`;
+      prevBtn.disabled = currentPage === 0;
+      nextBtn.disabled = end >= filteredCards.length || filteredCards.length === 0;
+      
+      if (filteredCards.length === 0) {
+        catalogList.innerHTML = '<p style="text-align:center; color:#777;">Ничего не найдено. Попробуйте другой запрос.</p>';
+      }
+    }
+
+    function changePage(direction) {
+      const totalPages = Math.ceil(filteredCards.length / ITEMS_PER_PAGE);
+      currentPage += direction;
+
+      if (currentPage < 0) currentPage = 0;
+      if (currentPage >= totalPages) currentPage = totalPages - 1;
+
+      renderPage();
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
+
+
